@@ -49,10 +49,12 @@
 .icon-envelop:before {
   content: "\e945";
   color: white;
-  font-size: 20px;
+  font-size: 25px;
 }
 .icon-menu:before {
   content: "\e9bd";
+  color: white;
+  font-size: 25px;
 }
 .icon-facebook:before {
   content: "\ea90";
@@ -75,7 +77,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale; */
   font-family: "NeueHaasUnicaPro";
-  font-weight: bold;
+  color: white;
 }
 
 code {
@@ -88,61 +90,92 @@ code {
     background-color: yellow;
   }
 
-  .Header--main {
-    display: flex;
-    justify-content: space-evenly;
-  }
-
-  .Header--menu_secondary-newsletter {
-    margin-left: 10px;
-  }
-
-  .Header--menu_secondary-profile_flag {
-    margin: 0 15px 0 15px;
-  }
-
-  .Header--menu_secondary-travel {
+  .Header--images-logo,
+  .Header--images-logoPic,
+  .Header--menu_secondary-travel,
+  .Header--menu_secondary-profile {
     display: none;
   }
 }
 
-@media screen and (max-width: 768px) {
+/* @media screen and (max-width: 768px) {
   body {
     background-color: blue;
   }
-}
 
-@media screen and (max-width: 480px) {
+  .Header--images-logo,
+  .Header--images-logoPic,
+  .Header--menu_secondary {
+    display: none;
+  }
+} */
+
+@media screen and (max-width: 768px) {
   body {
     background-color: green;
   }
 
-  .Header--menu_main {
+  .Header--images-logo,
+  .Header--images-logoPic,
+  .Header--menu_main,
+  .Header--menu_secondary {
     display: none;
   }
 
-  .Home--main h2 {
+  .Home--main_tittle {
     text-align: center;
+    color: white;
+    padding: 20px 0 20px 0;
   }
 
-  .Home--main-search {
-    border: none;
+  .Header--reservation h4 {
+    color: white;
+    font-family: "NeueHaasUnicaPro";
   }
 
-  .Header--main {
+  .Header--images-logoResponsive {
+    padding: 15px;
+  }
+
+  .Header--reservation-text {
+    color: white;
+  }
+
+  .Home--main-cover {
+    padding: 0 20px 30px;
+  }
+
+  .Home--main-status {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin: 0 0 10px;
+  }
+
+  .Home--main-origin {
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column;
   }
 
-  .Home--main {
-    padding: initial;
+  .Home--main-destination {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .Home--main-labels {
+    display: inherit;
+    padding: 10px;
+  }
+
+  .Home--main-disabled {
+    display: block;
   }
 
   .Home--main-input {
-    margin: 10px;
+    width: 100%;
   }
 
-  .Home--main-formGroup {
-    padding: 20px;
+  .Home--main-disabled {
+    margin-top: 15px;
+    width: 100%;
   }
 }

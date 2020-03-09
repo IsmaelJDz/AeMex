@@ -1,0 +1,143 @@
+{
+  "_meta": { "class": "FlightStatusCollection" },
+  "_collection": [
+    {
+      "_meta": { "class": "SegmentStatusCollection" },
+      "_collection": [
+        {
+          "_meta": { "class": "SegmentStatus" },
+          "status": "ARRIVED",
+          "boardingTerminal": "2",
+          "boardingGate": "68",
+          "boardingTime": "18:45",
+          "estimatedDepartureTime": "",
+          "estimatedArrivalTime": "",
+          "delayInMinutes": 0,
+          "arrivalTerminal": "1",
+          "arrivalGate": "N/A",
+          "segment": {
+            "_meta": { "class": "Segment" },
+            "segmentCode": "MEX_MAD_AM_2020-03-08_1845",
+            "fareBasisCode": null,
+            "fareFamily": null,
+            "fareAndCabinName": null,
+            "departureAirport": "MEX",
+            "departureDateTime": "2020-03-08T18:45:00",
+            "timeZoneName": null,
+            "timeZoneId": null,
+            "dstOffset": 0,
+            "rawOffset": 0,
+            "arrivalTimeZoneName": null,
+            "arrivalTimeZoneId": null,
+            "arrivalDstOffset": 0,
+            "arrivalRawOffset": 0,
+            "arrivalAirport": "MAD",
+            "arrivalDateTime": "2020-03-09T12:28:00",
+            "stops": null,
+            "flightDurationInMinutes": 1065,
+            "layoverToNextSegmentsInMinutes": 0,
+            "aircraftType": "789",
+            "operatingCarrier": "AM",
+            "operatingFlightCode": "1",
+            "marketingCarrier": "AM",
+            "marketingFlightCode": "1",
+            "amenitiesPremiumCabin": {
+              "complimentaryFeatures": [],
+              "paidFeatures": []
+            },
+            "amenitiesMainCabin": {
+              "complimentaryFeatures": [],
+              "paidFeatures": []
+            },
+            "isPremierAvailable": false,
+            "segmentStatus": null,
+            "boardingTime": "",
+            "boardingTerminal": "2",
+            "boardingGate": "68",
+            "capacity": null,
+            "bookingClass": null,
+            "cabin": null,
+            "flightStatus": null,
+            "checkinStatus": null,
+            "estimatedDepartureTime": null,
+            "scheduledDepartureTime": null,
+            "domestic": false,
+            "codeShare": false,
+            "daysBeforeDeparture": null,
+            "passFlight": false
+          }
+        },
+        {
+          "_meta": {
+            "class": "SegmentStatus"
+          },
+          "status": "ON_TIME",
+          "boardingTerminal": "T2",
+          "boardingGate": "N/A",
+          "boardingTime": "18:45",
+          "estimatedDepartureTime": "",
+          "estimatedArrivalTime": "",
+          "delayInMinutes": 0,
+          "arrivalTerminal": "1",
+          "arrivalGate": "N/A",
+          "segment": {
+            "_meta": {
+              "class": "Segment"
+            },
+            "segmentCode": "MEX_MAD_AM_2020-03-09_1845",
+            "fareBasisCode": null,
+            "fareFamily": null,
+            "fareAndCabinName": null,
+            "departureAirport": "MEX",
+            "departureDateTime": "2020-03-09T18:45:00",
+            "timeZoneName": null,
+            "timeZoneId": null,
+            "dstOffset": 0,
+            "rawOffset": 0,
+            "arrivalTimeZoneName": null,
+            "arrivalTimeZoneId": null,
+            "arrivalDstOffset": 0,
+            "arrivalRawOffset": 0,
+            "arrivalAirport": "MAD",
+            "arrivalDateTime": "2020-03-10T12:30:00",
+            "stops": null,
+            "flightDurationInMinutes": 1065,
+            "layoverToNextSegmentsInMinutes": 0,
+            "aircraftType": "789",
+            "operatingCarrier": "AM",
+            "operatingFlightCode": "1",
+            "marketingCarrier": "AM",
+            "marketingFlightCode": "1",
+            "amenitiesPremiumCabin": {
+              "complimentaryFeatures": [],
+              "paidFeatures": []
+            },
+            "amenitiesMainCabin": {
+              "complimentaryFeatures": [],
+              "paidFeatures": []
+            },
+            "isPremierAvailable": false,
+            "segmentStatus": null,
+            "boardingTime": "",
+            "boardingTerminal": "T2",
+            "boardingGate": "N/A",
+            "capacity": null,
+            "bookingClass": null,
+            "cabin": null,
+            "flightStatus": "ON_TIME",
+            "checkinStatus": null,
+            "estimatedDepartureTime": null,
+            "scheduledDepartureTime": null,
+            "domestic": false,
+            "codeShare": false,
+            "daysBeforeDeparture": null,
+            "passFlight": false
+          }
+        }
+      ],
+      "legType": "NON-STOP",
+      "totalFlightTimeInMinutes": 1065
+    }
+  ],
+  "_warnings": { "_meta": { "class": "WarningCollection" }, "_collection": [] }
+}

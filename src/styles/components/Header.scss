@@ -1,4 +1,5 @@
 $base-color: #0b2343;
+$aero-color: #302866;
 $secondary-color: #007cc2;
 $letter-color: #fff;
 $font-main: "NeueHaasUnicaPro";
@@ -6,63 +7,6 @@ $font-main: "NeueHaasUnicaPro";
 .Header--main {
   align-items: center;
   background-color: $base-color;
+  width: 100%;
   display: flex;
-  flex-wrap: wrap;
-}
-
-.Header--images {
-  margin-left: 15px;
-  &__secondaryLogo {
-    margin-left: 10px;
-  }
-}
-
-.Header--menu_main {
-  list-style: none;
-  color: $letter-color;
-  & nav {
-    ul {
-      margin-right: 10px;
-      display: flex;
-      list-style: none;
-      li {
-        margin: 10px;
-      }
-    }
-  }
-}
-
-.Header--menu_secondary {
-  list-style: none;
-  color: $letter-color;
-  font-family: $font-main;
-  display: flex;
-  flex-wrap: wrap;
-  font-size: 12px;
-  margin-left: auto;
-  &-travel ul {
-    list-style: none;
-    display: flex;
-    margin-right: 10px;
-    li {
-      margin: 10px;
-    }
-  }
-  &-profile {
-    width: 200px;
-    display: flex;
-    justify-content: space-around;
-    align-content: center;
-    align-items: center;
-    border-left: 1px solid #777777;
-  }
-
-  &-profile_flag img {
-    border-radius: 100%;
-  }
-
-  &-profile_login span {
-    color: $letter-color;
-    margin-right: 30px;
-  }
 }
