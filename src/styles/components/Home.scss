@@ -1,5 +1,68 @@
-$base-color: #c6538c;
+$base-color: #0b2343;
+$secondary-color: #007cc2;
+$letter-color: #fff;
 
-.Header__main {
-  background-color: $base-color;
+.Home--main {
+  background-color: $secondary-color;
+  min-height: calc(100vh - 241px);
+  padding: 90px;
+  & h2 {
+    color: $letter-color;
+    margin: 0;
+    font-size: 42px;
+  }
+  &_tittle,
+  &_form {
+    margin: 0 auto;
+  }
+  &-radio {
+    color: $letter-color;
+    margin-top: 5px;
+    label {
+      margin-left: 10px;
+      font-weight: normal;
+    }
+  }
+  &-search {
+    border-left: 1px solid $letter-color;
+  }
+  &-input {
+    height: 60px;
+    background: #fff;
+    border: 1px solid #e5e5e5;
+    padding: 0 20px;
+    outline: none;
+    font-size: 18px;
+  }
+
+  &-status {
+    color: white;
+  }
+
+  button {
+    background-color: $base-color;
+    font-family: NeueHaasUnicaPro-Medium, sans-serif;
+    border-radius: 40px;
+    color: $letter-color;
+    font-size: 14px;
+    line-height: 1;
+    min-height: 61px;
+    padding: 22px 40px 23px;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    border: 1px solid #007cc2;
+    margin-left: 30px;
+  }
+
+  &-disabled {
+    opacity: 0.3 !important;
+    background-color: rgba(0, 0, 0, 0.001);
+    border-color: hsla(0, 0%, 100%, 0.5);
+  }
+}
+
+.Home--main-formGroup {
+  padding: 50px;
 }

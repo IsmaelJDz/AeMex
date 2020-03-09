@@ -1,8 +1,9 @@
 import React from "react";
+import "../styles/components/Footer.scss"
 
 const Footer = () => (
   <div>
-    <p>Soy el footer</p>
+    <footer>Soy el Footer</footer>
   </div>
 );
 
