@@ -106,16 +106,14 @@ const Home = () => {
                 </select>
               </div>
               {!validateForm && !destination ? (
-                  <button
-                    type="submit"
-                    className="Home--main-disabled"
-                    disabled
-                  >
-                    BUSCAR
-                  </button>
-                ) : (
-                  <button className="Home--main-disabled" type="submit">BUSCAR</button>
-                )}
+                <button type="submit" className="Home--main-disabled" disabled>
+                  BUSCAR
+                </button>
+              ) : (
+                <button className="Home--main-disabled" type="submit">
+                  BUSCAR
+                </button>
+              )}
             </div>
           </form>
         </div>

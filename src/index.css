@@ -113,9 +113,9 @@ label {
     display: none;
   }
 
-  .Header--responsive {
+  /* .Header--responsive {
     margin-left: 20px;
-  }
+  } */
 
   .Header--menu_secondary-profile,
   .Header--menu_secondary {
@@ -199,10 +199,10 @@ label {
     color: white;
     font-family: "NeueHaasUnicaPro";
   }
-
+  /* 
   .Header--images-logoResponsive {
     padding: 15px;
-  }
+  } */
 
   .Header--reservation-text {
     color: white;
