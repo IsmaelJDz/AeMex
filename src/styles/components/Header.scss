@@ -9,4 +9,48 @@ $font-main: "NeueHaasUnicaPro";
   background-color: $base-color;
   width: 100%;
   display: flex;
+  & nav ul {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    li {
+      margin-left: 20px;
+    }
+  }
+}
+
+.Header--images {
+  display: flex;
+  margin-left: 30px;
+  &-logoResponsive {
+    display: none;
+  }
+}
+
+.Header--menu-tablet {
+  display: none;
+}
+
+.Header--menu_secondary {
+  display: flex;
+  flex: auto;
+  justify-content: flex-end;
+  align-items: center;
+  &-travel ul {
+    padding: 0;
+    display: flex;
+    list-style: none;
+    li {
+      margin: 0 10px 0 10px;
+      font-size: 12px;
+    }
+  }
+  &-profile {
+    border-left: 1px solid #ddd;
+    padding: 13px;
+  }
+  &-imgLanguage {
+    margin: 0px 10px 0 10px;
+    border-radius: 100%;
+  }
 }

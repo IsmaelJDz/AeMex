@@ -15,8 +15,8 @@ export const searchInfo = data => async dispatch => {
 
   try {
     const respuesta = await axios.get(
-      //`https://www.aeromexico.com/api/v1/checkin/flight-status?store=mx&pos=WEB&flight=1&date=${data.todayDate}&origin=${data.origin}&destination=${data.destination}`
-      `http://localhost:4000/_collection`
+      `https://www.aeromexico.com/api/v1/checkin/flight-status?store=mx&pos=WEB&flight=1&date=${data.todayDate}&origin=${data.origin}&destination=${data.destination}`
+      // `http://localhost:4000/_collection`
     );
 
     console.log(respuesta);

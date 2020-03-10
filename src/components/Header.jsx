@@ -44,7 +44,7 @@ const Header = () => {
         </div>
 
         <div className="Header--reservation">
-          <h4 className="Header--reservation-text">RERSERVA</h4>
+          <h4 className="Header--reservation-text">RESERVA</h4>
         </div>
 
         <div className="Header--menu_main">
@@ -71,14 +71,6 @@ const Header = () => {
               <li>Más</li>
             </ul>
           </div>
-          <div className="Header--menu-tablet">
-            <div className="Header--menu-hamburguer">
-              <span className="icon-menu"></span>
-            </div>
-            <div className="Header--menu-flag">
-              <span className="icon-envelop"></span>
-            </div>
-          </div>
           <div className="Header--menu_secondary-profile">
             <span className="icon-envelop"></span>
             <img
@@ -94,6 +86,14 @@ const Header = () => {
             >
               Iniciar sesión
             </Link>
+          </div>
+          <div className="Header--menu-tablet">
+            <div className="Header--menu-flag">
+              <span className="icon-envelop"></span>
+            </div>
+            <div className="Header--menu-hamburguer">
+              <span className="icon-menu"></span>
+            </div>
           </div>
         </div>
       </div>

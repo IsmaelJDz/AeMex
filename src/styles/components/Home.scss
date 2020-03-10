@@ -5,13 +5,15 @@ $border-color: #adadad;
 
 .Home--main {
   background-color: $secondary-color;
-  min-height: calc(100vh - 58px);
-
+  min-height: calc(100vh - 56px);
   & h2 {
     color: $letter-color;
     margin: 0;
+    font-size: 42px;
   }
-
+  &-cover {
+    padding: 55px;
+  }
   &-input {
     height: 60px;
     background: #fff;
@@ -20,7 +22,9 @@ $border-color: #adadad;
     outline: none;
     font-size: 18px;
   }
-
+  &-search {
+    display: flex;
+  }
   button {
     background-color: $base-color;
     font-family: NeueHaasUnicaPro-Medium, sans-serif;
@@ -29,6 +33,7 @@ $border-color: #adadad;
     font-size: 14px;
     line-height: 1;
     min-height: 61px;
+    height: 64px;
     padding: 22px 40px 23px;
     position: relative;
     text-align: center;
@@ -36,7 +41,6 @@ $border-color: #adadad;
     text-transform: uppercase;
     border: 1px solid #007cc2;
   }
-
   &-disabled {
     opacity: 0.3 !important;
     background-color: rgba(0, 0, 0, 0.001);

@@ -46,7 +46,7 @@ const Home = () => {
   return (
     <main className="Home--main">
       <div className="Home--main-cover">
-        <div className="Home--main_tittle">
+        <div className="Home--main_title">
           <h2>Rastrea tu vuelo</h2>
         </div>
         <div className="Home--main_form">
@@ -104,7 +104,8 @@ const Home = () => {
                     </option>
                   ))}
                 </select>
-                {!validateForm && !destination ? (
+              </div>
+              {!validateForm && !destination ? (
                   <button
                     type="submit"
                     className="Home--main-disabled"
@@ -113,9 +114,8 @@ const Home = () => {
                     BUSCAR
                   </button>
                 ) : (
-                  <button type="submit">BUSCAR</button>
+                  <button className="Home--main-disabled" type="submit">BUSCAR</button>
                 )}
-              </div>
             </div>
           </form>
         </div>

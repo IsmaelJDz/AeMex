@@ -71,13 +71,13 @@
 
 body {
   margin: 0;
-  /* font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale; */
   font-family: "NeueHaasUnicaPro";
   color: white;
+}
+
+a {
+  color: white;
+  text-decoration: none;
 }
 
 code {
@@ -85,30 +85,88 @@ code {
     monospace;
 }
 
-@media screen and (max-width: 1024px) {
+label {
+  display: block;
+  margin-bottom: 6px;
+}
+
+@media screen and (max-width: 1226px) {
   body {
     background-color: yellow;
+  }
+
+  /* .Header--menu-tablet,
+  .Header--images-logoResponsive,
+  .Header--reservation {
+    display: none;
+  } */
+
+  .Header--images-logoResponsive,
+  .Header--menu-tablet {
+    display: block;
   }
 
   .Header--images-logo,
   .Header--images-logoPic,
   .Header--menu_secondary-travel,
-  .Header--menu_secondary-profile {
+  .Header--reservation {
     display: none;
+  }
+
+  .Header--responsive {
+    margin-left: 20px;
+  }
+
+  .Header--menu_secondary-profile,
+  .Header--menu_secondary {
+    display: flex;
+  }
+
+  .Header--menu_secondary {
+    flex: auto;
+    justify-content: flex-end;
+  }
+
+  .Header--menu-tablet {
+    margin: 0 15px 0 15px;
+  }
+
+  .Header--menu_secondary-imgLanguage {
+    margin: 0 20px 0 20px;
+  }
+
+  .Home--main-status {
+    display: grid;
+    grid-template-columns: 1fr 5fr;
+  }
+
+  .Home--main-radio {
+    padding: 25px 0 25px 0;
+  }
+
+  .Home--main-disabled {
+    margin-bottom: -30px;
+  }
+
+  .Header--menu-flag {
+    display: none;
+  }
+
+  .Home--main-search {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
   }
 }
 
-/* @media screen and (max-width: 768px) {
-  body {
-    background-color: blue;
-  }
-
-  .Header--images-logo,
-  .Header--images-logoPic,
-  .Header--menu_secondary {
+@media screen and (min-width: 1024px) {
+  /* .Header--main {
+    background-color: red;
+  } */
+  .Header--reservation {
     display: none;
   }
-} */
+}
 
 @media screen and (max-width: 768px) {
   body {
@@ -118,14 +176,23 @@ code {
   .Header--images-logo,
   .Header--images-logoPic,
   .Header--menu_main,
-  .Header--menu_secondary {
+  .Header--menu_secondary-profile {
     display: none;
   }
 
-  .Home--main_tittle {
+  .Home--main_title {
     text-align: center;
     color: white;
-    padding: 20px 0 20px 0;
+    padding: 5px 0 5px 0;
+  }
+
+  .Header--reservation {
+    display: block;
+    margin-left: 10px;
+  }
+
+  .Header--menu-tablet {
+    display: flex;
   }
 
   .Header--reservation h4 {
@@ -174,8 +241,17 @@ code {
     width: 100%;
   }
 
+  .Header--menu-hamburguer {
+    margin-left: 20px;
+  }
+
   .Home--main-disabled {
     margin-top: 15px;
+    margin-bottom: 5px;
     width: 100%;
+  }
+
+  .Home--main-search {
+    display: block;
   }
 }
