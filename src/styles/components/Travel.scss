@@ -1,0 +1,32 @@
+.Travel--header {
+  border-bottom: 1px solid #ddd;
+  width: 80%;
+  margin: 0 auto;
+  color: black;
+  & ul {
+    display: flex;
+    list-style: none;
+    margin-left: 0;
+    justify-content: space-between;
+    li {
+      padding: 10px;
+    }
+  }
+}
+
+.Travel--content-item {
+  display: flex;
+  justify-content: space-between;
+}
+
+.Travel-results {
+  width: 80%;
+  margin: 0 auto;
+  color: black;
+  & ul {
+    display: flex;
+    margin-left: 0 !important;
+    list-style: none;
+    justify-content: space-between;
+  }
+}

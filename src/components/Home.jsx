@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { connect } from "react-redux"
+import { connect } from "react-redux";
 import "../styles/components/Home.scss";
 import moment from "moment";
 import "moment/locale/es";
@@ -22,15 +22,13 @@ const stateInicial = {
   todayDate: "",
   validateForm: false,
   error: false,
-  disabled: true,
+  disabled: true
 };
 
-
 // ===================================
-// State full class component 
+// State full class component
 // ===================================
 class Home extends Component {
-  
   state = { ...stateInicial };
 
   handleChange = e => {
@@ -41,7 +39,7 @@ class Home extends Component {
   };
 
   // ===================================
-  // Validate form 
+  // Validate form
   // ===================================
   handleSubmitData = e => {
     e.preventDefault();
@@ -60,7 +58,12 @@ class Home extends Component {
       validateForm: false
     });
 
-    
+    // ===================================
+    // reference for remove height and charge content travels
+    // ===================================
+    this.addClass.classList = "Home--main height-page";
+    this.removeClass.classList = "hide";
+
     // ===================================
     // send Data To Redux Action
     // ===================================
@@ -85,9 +88,12 @@ class Home extends Component {
 
   render() {
     return (
-      <main className="Home--main">
+      <main className="Home--main" ref={div => (this.addClass = div)}>
         <div className="Home--main-cover">
-          <div className="Home--main_title">
+          <div
+            className="Home--main_title"
+            ref={div => (this.removeClass = div)}
+          >
             <h2>Rastrea tu vuelo</h2>
           </div>
           <div className="Home--main_form">
@@ -149,7 +155,7 @@ class Home extends Component {
                     ))}
                   </select>
                 </div>
-                {!this.state.origin && !this.state.destination ? (
+                {this.state.origin === "" || this.state.destination === "" ? (
                   <button
                     type="submit"
                     className="Home--main-disabled"
@@ -172,7 +178,7 @@ class Home extends Component {
 }
 
 const mapDispatchToProps = {
-    searchInfo,
-}
+  searchInfo
+};
 
 export default connect(null, mapDispatchToProps)(Home);

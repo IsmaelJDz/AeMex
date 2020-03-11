@@ -90,6 +90,13 @@ label {
   margin-bottom: 6px;
 }
 
+.NotFound-container {
+  width: 80%;
+  margin: 0 auto;
+  text-align: center;
+  color: red;
+}
+
 .nameSpan {
   display: block;
 }
@@ -98,8 +105,16 @@ label {
   opacity: 1 !important;
 }
 
+.show:hover {
+  background-color: red;
+}
+
+.hide {
+  display: none;
+}
+
 .height-page {
-  min-height: 0 !important;
+  min-height: 0;
 }
 
 @media screen and (max-width: 1226px) {
@@ -247,5 +262,9 @@ label {
 
   .Home--main-search {
     display: block;
+  }
+
+  .Home--main_formGroup {
+    margin-top: 0;
   }
 }
