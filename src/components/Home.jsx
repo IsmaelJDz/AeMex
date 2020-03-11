@@ -1,125 +1,148 @@
-import React, { useState, useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import React, { Component } from "react";
+import "../styles/components/Home.scss";
 import moment from "moment";
 import "moment/locale/es";
-import "../styles/components/Home.scss";
 
-import { searchInfo } from "../redux/actions/searchInfo";
 import formatDate from "../utils/formatDate";
 
-const Home = () => {
-  const [stateAllData, setStateTodayData] = useState([]);
-  const [defaultValue, setTodaySelect] = useState({ defaultValue: "" });
+const stateInicial = {
+  stateAllData: [],
+  defaultValue: "",
+  origin: "",
+  destination: "",
+  todayDate: "",
+  validateForm: false,
+  error: false
+};
 
-  const [origin, setOrigin] = useState("");
-  const [destination, setDestination] = useState("");
-  const [todayDate, setTodayDate] = useState("");
+export class Home extends Component {
+  state = { ...stateInicial };
 
-  const [validateForm, setValidateForm] = useState(false);
-
-  const dispatch = useDispatch();
-
-  const validarFormulario = data => dispatch(searchInfo(data));
-
-  useEffect(() => {
-    setStateTodayData(formatDate());
-    let todayDataSelect = moment().format("YYYY-MM-DD");
-    setTodaySelect(todayDataSelect);
-  }, []);
-
-  const handleGetData = e => {
-    e.preventDefault();
-
-    if (origin.trim() === "" || destination.trim() === "") {
-      setValidateForm(true);
-      return;
-    }
-
-    setValidateForm(false);
-    validarFormulario({
-      origin,
-      destination,
-      todayDate
+  handleChange = e => {
+    this.setState({
+      ...this.state,
+      [e.target.name]: e.target.value
     });
   };
 
-  return (
-    <main className="Home--main">
-      <div className="Home--main-cover">
-        <div className="Home--main_title">
-          <h2>Rastrea tu vuelo</h2>
+  handleGetData = e => {
+    e.preventDefault();
+
+    if (this.origin.trim() === "" || this.destination.trim() === "") {
+      this.setState({
+        validateForm: true
+      });
+      return;
+    }
+
+    this.setState({
+      validateForm: false
+    });
+
+    console.log(this.state);
+    // validarFormulario({
+    //   origin,
+    //   destination,
+    //   todayDate
+    // });
+  };
+
+  componentDidMount() {
+    let todayDataSelect = moment().format("YYYY-MM-DD");
+    this.setState({
+      ...this.state,
+      defaultValue: todayDataSelect,
+      stateAllData: formatDate()
+    });
+  }
+
+  render() {
+    console.log(this.state);
+    return (
+      <main className="Home--main">
+        <div className="Home--main-cover">
+          <div className="Home--main_title">
+            <h2>Rastrea tu vuelo</h2>
+          </div>
+          <div className="Home--main_form">
+            <form
+              onSubmit={this.handleGetData}
+              className="Home--main_formGroup"
+            >
+              <div className="Home--main-status">
+                <div className="Home--main-radio">
+                  <input type="radio" name="TypeOfSearch" />
+                  <label className="Home--main-labels">Destino</label>
+                </div>
+                <div className="Home--main-radio">
+                  <input type="radio" name="TypeOfSearch" />
+                  <label className="Home--main-labels">Número de vuelo</label>
+                </div>
+              </div>
+              <div className="Home--main-search">
+                <div className="Home--main-origin">
+                  <label className="Home--main-labels">
+                    <span className="nameSpan">Origen</span>
+                  </label>
+                  <input
+                    type="text"
+                    name="Origin"
+                    placeholder="Origen"
+                    className="Home--main-input"
+                    value={this.state.origin}
+                    onChange={this.handleChange}
+                  />
+                </div>
+                <div className="Home--main-destination">
+                  <label className="Home--main-labels">
+                    <span className="nameSpan">Destino</span>
+                  </label>
+                  <input
+                    type="text"
+                    name="Destination"
+                    placeholder="Destino"
+                    className="Home--main-input"
+                    value={this.state.destination}
+                    onChange={this.handleChange}
+                  />
+                </div>
+                <div className="Home--main-out">
+                  <label className="Home--main-labels">
+                    <span>Fecha de salida</span>
+                  </label>
+                  <select
+                    name="select"
+                    value={this.state.defaultValue}
+                    className="Home--main-input"
+                    onChange={this.handleChange}
+                  >
+                    {this.state.stateAllData.map((item, index) => (
+                      <option value={item.day} key={index}>
+                        {item.formatStringDay}
+                      </option>
+                    ))}
+                  </select>
+                </div>
+                {!this.state.validateForm && !this.state.destination ? (
+                  <button
+                    type="submit"
+                    className="Home--main-disabled"
+                    disabled
+                  >
+                    BUSCAR
+                  </button>
+                ) : (
+                  <button className="Home--main-disabled" type="submit">
+                    BUSCAR
+                  </button>
+                )}
+              </div>
+            </form>
+          </div>
         </div>
-        <div className="Home--main_form">
-          <form onSubmit={handleGetData} className="Home--main-formGroup">
-            <div className="Home--main-status">
-              <div className="Home--main-radio">
-                <input type="radio" name="TypeOfSearch" />
-                <label>Destino</label>
-              </div>
-              <div className="Home--main-radio">
-                <input type="radio" name="TypeOfSearch" />
-                <label>Número de vuelo</label>
-              </div>
-            </div>
-            <div className="Home--main-search">
-              <div className="Home--main-origin">
-                <label className="Home--main-labels">
-                  <span>Origen</span>
-                </label>
-                <input
-                  type="text"
-                  name="Origin"
-                  placeholder="Origen"
-                  className="Home--main-input"
-                  value={origin}
-                  onChange={e => setOrigin(e.target.value)}
-                />
-              </div>
-              <div className="Home--main-destination">
-                <label className="Home--main-labels">
-                  <span>Destino</span>
-                </label>
-                <input
-                  type="text"
-                  name="Destination"
-                  placeholder="Destino"
-                  className="Home--main-input"
-                  value={destination}
-                  onChange={e => setDestination(e.target.value)}
-                />
-              </div>
-              <div className="Home--main-out">
-                <label className="Home--main-labels">
-                  <span>Fecha de salida</span>
-                </label>
-                <select
-                  name="select"
-                  value={defaultValue}
-                  className="Home--main-input"
-                  onChange={e => setTodayDate(e.target.value)}
-                >
-                  {stateAllData.map((item, index) => (
-                    <option value={item.day} key={index}>
-                      {item.formatStringDay}
-                    </option>
-                  ))}
-                </select>
-              </div>
-              {!validateForm && !destination ? (
-                <button type="submit" className="Home--main-disabled" disabled>
-                  BUSCAR
-                </button>
-              ) : (
-                <button className="Home--main-disabled" type="submit">
-                  BUSCAR
-                </button>
-              )}
-            </div>
-          </form>
-        </div>
-      </div>
-    </main>
-  );
-};
+      </main>
+    );
+  }
+}
 
 export default Home;

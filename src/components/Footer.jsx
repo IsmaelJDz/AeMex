@@ -1,5 +1,11 @@
 import React from "react";
-import "../styles/components/Footer.scss"
+import "../styles/components/Footer.scss";
+
+// ===================
+
+// State less functional component
+
+// ===================
 
 const Footer = () => (
   <div>

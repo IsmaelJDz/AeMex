@@ -1,16 +1,22 @@
 import React, { Fragment } from "react";
 import { Link } from "react-router-dom";
 
+// ================================
+// Style Sheet Component
+// =================================
 import "../styles/components/Header.scss";
 
 //===================================
 //  Resources Img
 //===================================
-
 import LogoAeroMex from "../resources/img/logoAero.svg";
 import LogoAeroMexResponsive from "../resources/img/ResponsiveLogo.svg";
 import Pictogram from "../resources/img/logoAeroTwo.svg";
 import Language from "../resources/img/mexFlag.svg";
+
+// ===================================
+// State less functional component
+// ===================================
 
 const Header = () => {
   return (

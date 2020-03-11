@@ -90,17 +90,11 @@ label {
   margin-bottom: 6px;
 }
 
+.nameSpan {
+  display: block;
+}
+
 @media screen and (max-width: 1226px) {
-  body {
-    background-color: yellow;
-  }
-
-  /* .Header--menu-tablet,
-  .Header--images-logoResponsive,
-  .Header--reservation {
-    display: none;
-  } */
-
   .Header--images-logoResponsive,
   .Header--menu-tablet {
     display: block;
@@ -113,9 +107,9 @@ label {
     display: none;
   }
 
-  /* .Header--responsive {
-    margin-left: 20px;
-  } */
+  .Home--main_formGroup {
+    display: block;
+  }
 
   .Header--menu_secondary-profile,
   .Header--menu_secondary {
@@ -153,26 +147,24 @@ label {
   }
 
   .Home--main-search {
+    border-left: none;
+  }
+
+  .Home--main-search {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
   }
 }
 
 @media screen and (min-width: 1024px) {
-  /* .Header--main {
-    background-color: red;
-  } */
   .Header--reservation {
     display: none;
   }
 }
 
 @media screen and (max-width: 768px) {
-  body {
-    background-color: green;
-  }
-
   .Header--images-logo,
   .Header--images-logoPic,
   .Header--menu_main,
@@ -199,10 +191,6 @@ label {
     color: white;
     font-family: "NeueHaasUnicaPro";
   }
-  /* 
-  .Header--images-logoResponsive {
-    padding: 15px;
-  } */
 
   .Header--reservation-text {
     color: white;
