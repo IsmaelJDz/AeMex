@@ -1,10 +1,19 @@
 import React, { Component } from "react";
+import { connect } from "react-redux"
 import "../styles/components/Home.scss";
 import moment from "moment";
 import "moment/locale/es";
 
 import formatDate from "../utils/formatDate";
 
+// ===================================
+// Redux action search in api
+// ===================================
+import { searchInfo } from "../redux/actions/searchInfo";
+
+// ===================================
+// State initial
+// ===================================
 const stateInicial = {
   stateAllData: [],
   defaultValue: "",
@@ -12,10 +21,16 @@ const stateInicial = {
   destination: "",
   todayDate: "",
   validateForm: false,
-  error: false
+  error: false,
+  disabled: true,
 };
 
-export class Home extends Component {
+
+// ===================================
+// State full class component 
+// ===================================
+class Home extends Component {
+  
   state = { ...stateInicial };
 
   handleChange = e => {
@@ -25,28 +40,40 @@ export class Home extends Component {
     });
   };
 
-  handleGetData = e => {
+  // ===================================
+  // Validate form 
+  // ===================================
+  handleSubmitData = e => {
     e.preventDefault();
+    const { origin, destination, defaultValue } = this.state;
 
-    if (this.origin.trim() === "" || this.destination.trim() === "") {
+    if (origin.trim() === "" || destination.trim() === "") {
       this.setState({
+        ...this.state,
         validateForm: true
       });
       return;
     }
 
     this.setState({
+      ...this.state,
       validateForm: false
     });
 
-    console.log(this.state);
-    // validarFormulario({
-    //   origin,
-    //   destination,
-    //   todayDate
-    // });
+    
+    // ===================================
+    // send Data To Redux Action
+    // ===================================
+    this.props.searchInfo({
+      origin,
+      destination,
+      defaultValue
+    });
   };
 
+  // ===================================
+  // exec functions when the dom is mounted
+  // ===================================
   componentDidMount() {
     let todayDataSelect = moment().format("YYYY-MM-DD");
     this.setState({
@@ -57,7 +84,6 @@ export class Home extends Component {
   }
 
   render() {
-    console.log(this.state);
     return (
       <main className="Home--main">
         <div className="Home--main-cover">
@@ -66,7 +92,7 @@ export class Home extends Component {
           </div>
           <div className="Home--main_form">
             <form
-              onSubmit={this.handleGetData}
+              onSubmit={this.handleSubmitData}
               className="Home--main_formGroup"
             >
               <div className="Home--main-status">
@@ -86,7 +112,7 @@ export class Home extends Component {
                   </label>
                   <input
                     type="text"
-                    name="Origin"
+                    name="origin"
                     placeholder="Origen"
                     className="Home--main-input"
                     value={this.state.origin}
@@ -99,7 +125,7 @@ export class Home extends Component {
                   </label>
                   <input
                     type="text"
-                    name="Destination"
+                    name="destination"
                     placeholder="Destino"
                     className="Home--main-input"
                     value={this.state.destination}
@@ -111,7 +137,7 @@ export class Home extends Component {
                     <span>Fecha de salida</span>
                   </label>
                   <select
-                    name="select"
+                    name="defaultValue"
                     value={this.state.defaultValue}
                     className="Home--main-input"
                     onChange={this.handleChange}
@@ -123,7 +149,7 @@ export class Home extends Component {
                     ))}
                   </select>
                 </div>
-                {!this.state.validateForm && !this.state.destination ? (
+                {!this.state.origin && !this.state.destination ? (
                   <button
                     type="submit"
                     className="Home--main-disabled"
@@ -132,7 +158,7 @@ export class Home extends Component {
                     BUSCAR
                   </button>
                 ) : (
-                  <button className="Home--main-disabled" type="submit">
+                  <button className="Home--main-disabled show" type="submit">
                     BUSCAR
                   </button>
                 )}
@@ -145,4 +171,8 @@ export class Home extends Component {
   }
 }
 
-export default Home;
+const mapDispatchToProps = {
+    searchInfo,
+}
+
+export default connect(null, mapDispatchToProps)(Home);

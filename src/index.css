@@ -94,6 +94,14 @@ label {
   display: block;
 }
 
+.show {
+  opacity: 1 !important;
+}
+
+.height-page {
+  min-height: 0 !important;
+}
+
 @media screen and (max-width: 1226px) {
   .Header--images-logoResponsive,
   .Header--menu-tablet {
@@ -151,10 +159,8 @@ label {
   }
 
   .Home--main-search {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: center;
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr 1fr;
   }
 }
 

@@ -1,16 +1,20 @@
 import React, { Component } from "react";
+import { connect } from "react-redux"
+import Spinner from "./Spinner";
+import searchData from "../redux/reducers/searchData";
 
 export class Travels extends Component {
-  state = {
-    travel: false
-  };
 
   render() {
+    if(this.props.search.isLoading) {
+      return <Spinner />
+    }
+
     return (
       <div className="Travel--main">
-        {this.state.travel && (
+        {!this.isLoading && (
           <div className="Travel--main">
-            <h2>TRAVELS</h2>
+            {console.log(this.props)}
           </div>
         )}
       </div>
@@ -18,4 +22,6 @@ export class Travels extends Component {
   }
 }
 
-export default Travels;
+const mapStateToProps = ({ stateData }) => searchData;
+
+export default connect(mapStateToProps, null)(Travels);

@@ -10,7 +10,7 @@ before to write npm start you must to install npm packages
 *react-router -> routes
 *axios -> get data API
 *redux -> adming global state
-\*redux-saga -> admin global state with async actions
+\*redux-thunk -> admin global state with async actions
 
 ### `npm install`
 
