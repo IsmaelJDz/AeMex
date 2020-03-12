@@ -1,5 +1,4 @@
 import React, { Fragment } from "react";
-import { Link } from "react-router-dom";
 
 // ================================
 // Style Sheet Component
@@ -85,13 +84,13 @@ const Header = () => {
               width="25px"
               className="Header--menu_secondary-imgLanguage"
             />
-            <Link
+            <a
               to="/"
               className="Header--menu_secondary-profile_login"
               alt="login"
             >
               Iniciar sesión
-            </Link>
+            </a>
           </div>
           <div className="Header--menu-tablet">
             <div className="Header--menu-flag">

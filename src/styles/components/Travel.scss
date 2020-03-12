@@ -5,8 +5,9 @@
   color: black;
   & ul {
     display: flex;
+    flex-wrap: wrap;
     list-style: none;
-    margin-left: 0;
+    padding: 0;
     justify-content: space-between;
     li {
       padding: 10px;
@@ -17,6 +18,7 @@
 .Travel--content-item {
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
 }
 
 .Travel-results {

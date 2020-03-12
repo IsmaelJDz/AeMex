@@ -2,9 +2,7 @@ import React, { Fragment } from "react";
 import "../styles/components/Travel.scss";
 
 export default function Travel(props) {
-  //    let {}
 
-  console.log(props._collection[0]._collection);
   return (
     <Fragment>
       <div className="Travel--header">
@@ -18,16 +16,16 @@ export default function Travel(props) {
         </ul>
       </div>
       <div className="Travel-results">
+        
         {props._collection[0]._collection.map((item, index) => (
           <div className="Travel--content-result" key={index}>
-            {/* {console.log(item.segment.operatingCarrier)} */}
             <div className="Travel--content-item">
-              <h3>{item.segment.operatingCarrier}</h3>
+              <h3>{item.segment.operatingCarrier} {item.segment.operatingFlightCode}</h3>
               <h3>{item.status}</h3>
-              <h3>{item.status}</h3>
-              <h3>{item.status}</h3>
-              <h3>{item.status}</h3>
-              <h3>{item.status}</h3>
+              <h3>{item.segment.departureAirport}</h3>
+              <h3>{item.boardingTime}</h3>
+              <h3>{item.segment.arrivalDateTime.substr(11)}</h3>
+              <h3>{item.segment.arrivalAirport}</h3>
             </div>
           </div>
         ))}
