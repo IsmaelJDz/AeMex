@@ -14,7 +14,7 @@ import Pictogram from "../resources/img/logoAeroTwo.svg";
 import Language from "../resources/img/mexFlag.svg";
 
 // ===================================
-// State less functional component
+// State less functional component or pure component
 // ===================================
 
 const Header = () => {
@@ -85,7 +85,7 @@ const Header = () => {
               className="Header--menu_secondary-imgLanguage"
             />
             <a
-              to="/"
+              href="!#"
               className="Header--menu_secondary-profile_login"
               alt="login"
             >

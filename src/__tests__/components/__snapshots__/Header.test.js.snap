@@ -111,7 +111,7 @@ exports[`Header SnapShot comprobar el SnapShot de Header 1`] = `
         <a
           alt="login"
           className="Header--menu_secondary-profile_login"
-          to="/"
+          href="!#"
         >
           Iniciar sesión
         </a>

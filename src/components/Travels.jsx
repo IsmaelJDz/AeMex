@@ -6,6 +6,9 @@ import NotFound from "../containers/NotFound";
 
 import searchData from "../redux/reducers/searchData";
 
+// ===================
+// State full class component or smart component
+// ===================
 export class Travels extends Component {
   render() {
     if (this.props.search.isLoading) {
@@ -32,4 +35,7 @@ export class Travels extends Component {
 
 const mapStateToProps = ({ stateData }) => searchData;
 
+// ===================
+// connect the the global state props with the component
+// ===================
 export default connect(mapStateToProps, null)(Travels);

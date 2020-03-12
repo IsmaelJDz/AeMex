@@ -2,7 +2,7 @@ import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 //===================================
-//  Components
+//  General components with react router
 //===================================
 
 import Home from "../components/Home";
@@ -14,7 +14,6 @@ const App = () => (
     <Layout>
       <Switch>
         <Route exact path="/" component={Home} />
-        {/* <Route path="/movie/:id" component={MovieDetail} /> */}
         <Route component={NotFound} />
       </Switch>
     </Layout>

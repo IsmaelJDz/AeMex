@@ -1,6 +1,11 @@
 import React, { Fragment } from "react";
 import "../styles/components/Travel.scss";
 
+// ===================
+// State less functional component or Pure component
+// travel result
+// ===================
+
 export default function Travel(props) {
 
   return (

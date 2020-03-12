@@ -11,6 +11,10 @@ import reduxThunk from "redux-thunk";
 import reducers from "./redux/reducers/index"
 const initialState = {}
 
+
+// ===================
+// Apply middleware Redux Thunk for async actions with devtool enhancer 
+// ===================
 const middlewareEnhancers = applyMiddleware(reduxThunk);
 const composeEnhancers = compose(
   middlewareEnhancers,
@@ -19,6 +23,9 @@ const composeEnhancers = compose(
 
 const store = createStore(reducers, initialState, composeEnhancers);
 
+// ===================
+// Wrapper provider HOC
+// ===================
 ReactDOM.render(
   <Provider store={store}>
     <App />

@@ -1,6 +1,9 @@
 import React from "react";
 import "../styles/components/Spinner.scss";
 
+// ===================
+// Spinner when the page is charging
+// ===================
 const Spinner = () => {
   return (
     <div className="contenido-spinner">

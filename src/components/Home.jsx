@@ -177,6 +177,9 @@ class Home extends Component {
   }
 }
 
+// ===================
+// Connect actions redux with component home
+// ===================
 const mapDispatchToProps = {
   searchInfo
 };
